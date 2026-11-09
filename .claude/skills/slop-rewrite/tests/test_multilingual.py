@@ -121,6 +121,16 @@ class ProtectedContent(unittest.TestCase):
     def test_newline_normalization_is_allowed(self):
         self.assertFalse(tool.compare("```\r\nx\r\n```\r\n", "```\nx\n```\n"))
 
+    def test_scientific_notation_and_compound_units(self):
+        for before, after in [("3e-4", "3e+4"), ("2.1E−3 m/s", "2.1E−3 m/s²"),
+                              ("20 kg/m³", "20 kg/m²"), ("10 rad/s", "10 deg/s"),
+                              ("5 N·m", "5 N/m"), ("3 m s^-1", "3 m s^-2")]:
+            with self.subTest(before=before):
+                self.assertTrue(tool.compare(before, after))
+
+    def test_plain_units_do_not_eat_next_word(self):
+        self.assertEqual(tool.invariants("20 samples")["numbers"], {"20": 1})
+
     def test_apostrophe_is_not_quotation(self):
         self.assertIn("l’analyse", tool.prose("Vérifier l’analyse et l’API."))
 
