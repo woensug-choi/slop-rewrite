@@ -1,0 +1,42 @@
+{
+  "language": "en",
+  "name": "English",
+  "guidance": [
+    "Keep the existing US/UK spelling and the document’s chosen voice; do not switch dialects.",
+    "Use a concrete subject and verb when the actor is known. Keep passive voice when the actor is unknown or irrelevant.",
+    "Remove empty lead-ins and unsupported superlatives; retain technical terms with precise meanings.",
+    "Keep may, can, must, should and negation distinct. A possibility is not a guarantee or requirement.",
+    "Keep articles, countability, singular/plural agreement and parallel imperative steps natural.",
+    "Preserve API names, units, decimal points and citations; use sentence case only when it fits the existing heading convention."
+  ],
+  "rules": [
+    {
+      "id": "en-lead-in",
+      "pattern": "\\b(?:it is important to note that|it is worth noting that|it should be noted that)\\b",
+      "message": "Remove the lead-in if it adds no qualification.",
+      "example": "It should be noted that the solver records samples."
+    },
+    {
+      "id": "en-purpose",
+      "pattern": "\\bin order to\\b",
+      "message": "Consider “to” when the purpose remains clear.",
+      "example": "Run this command in order to inspect the log."
+    },
+    {
+      "id": "en-nominalization",
+      "pattern": "\\b(?:perform an analysis of|conduct an evaluation of)\\b",
+      "message": "Consider a direct verb; keep established technical procedure names.",
+      "example": "Perform an analysis of the output."
+    },
+    {
+      "id": "en-promotion",
+      "pattern": "\\b(?:groundbreaking|revolutionary|seamlessly)\\b",
+      "message": "Check the evidence and replace unsupported promotion with a specific capability.",
+      "example": "This revolutionary solver records samples."
+    }
+  ],
+  "examples": {
+    "review": "It should be noted that the solver records 20 samples.",
+    "clear": "The solver records 20 samples."
+  }
+}

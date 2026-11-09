@@ -1,0 +1,43 @@
+{
+  "language": "de",
+  "name": "Deutsch",
+  "guidance": [
+    "Die gewählte Anrede beibehalten: du, Sie oder unpersönliche Anleitung. Nicht ungefragt wechseln.",
+    "Kasus, Artikel, Genus und Numerus prüfen. Zusammensetzungen und Großschreibung deutscher Substantive erhalten.",
+    "Verbklammer und Stellung des finiten Verbs beachten. Lange Nominalketten auflösen, ohne fachliche Bezüge zu verändern.",
+    "Passiv verwenden, wenn der Handelnde unbekannt oder unwichtig ist; keinen Akteur erfinden.",
+    "Kann, muss, soll, darf und Negationen unterscheiden. Bedingungen und Gültigkeitsbereiche nicht verkürzen.",
+    "Dezimalkomma, Maßeinheiten, ß/ss und gewählte DACH-Variante erhalten; Quellcode und Bezeichner nicht eindeutschen.",
+    "Füllformeln und unbelegte Wertungen streichen. Fachbegriffe nicht allein zur Variation durch Synonyme ersetzen."
+  ],
+  "rules": [
+    {
+      "id": "de-lead-in",
+      "pattern": "\\bes ist (?:wichtig|anzumerken),? (?:zu beachten,? )?dass\\b",
+      "message": "Prüfen, ob die Aussage ohne Einleitung verständlich bleibt.",
+      "example": "Es ist wichtig zu beachten, dass der Solver Proben speichert."
+    },
+    {
+      "id": "de-nominalization",
+      "pattern": "\\b(?:zur Durchführung|eine Überprüfung durchführen)\\b",
+      "message": "Ein direktes Verb erwägen, sofern kein feststehender Fachbegriff gemeint ist.",
+      "example": "Zur Durchführung der Analyse wird die Datei geladen."
+    },
+    {
+      "id": "de-purpose",
+      "pattern": "\\bzum Zwecke (?:der|des)\\b",
+      "message": "Eine kürzere Formulierung wählen, wenn der Zweck erhalten bleibt.",
+      "example": "Zum Zwecke der Prüfung wird das Protokoll gelesen."
+    },
+    {
+      "id": "de-promotion",
+      "pattern": "\\b(?:bahnbrechend(?:e[nrsm]?)?|revolutionär(?:e[nrsm]?)?|nahtlos)\\b",
+      "message": "Die Aussage belegen oder die konkrete Funktion nennen.",
+      "example": "Der Solver arbeitet nahtlos mit dem Modul."
+    }
+  ],
+  "examples": {
+    "review": "Es ist wichtig zu beachten, dass der Solver 20 Proben speichert.",
+    "clear": "Der Solver speichert 20 Proben."
+  }
+}

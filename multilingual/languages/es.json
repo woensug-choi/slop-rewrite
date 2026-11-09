@@ -1,0 +1,43 @@
+{
+  "language": "es",
+  "name": "Español",
+  "guidance": [
+    "Mantener la variedad regional y el tratamiento elegido: tú, usted, vosotros o redacción impersonal.",
+    "Revisar la concordancia de género y número y los referentes de pronombres, sin forzar sujetos explícitos.",
+    "Evitar calcos del inglés y nominalizaciones innecesarias. Conservar la terminología técnica establecida.",
+    "Distinguir puede, debe, se recomienda y las negaciones; mantener el alcance de condiciones y excepciones.",
+    "Revisar usos del gerundio que expresen una consecuencia posterior y puedan ocultar el orden de los pasos.",
+    "Conservar tildes, signos de apertura y convenciones decimales; no modificar comandos, rutas ni identificadores.",
+    "Reducir frases vacías y valoraciones sin respaldo. No sustituir términos precisos solo para evitar repeticiones."
+  ],
+  "rules": [
+    {
+      "id": "es-lead-in",
+      "pattern": "\\b(?:cabe destacar que|es importante señalar que)\\b",
+      "message": "Comprobar si se puede empezar directamente por la información.",
+      "example": "Cabe destacar que el archivo se guarda."
+    },
+    {
+      "id": "es-nominalization",
+      "pattern": "\\bllevar a cabo (?:un análisis|una evaluación)\\b",
+      "message": "Considerar un verbo directo si no cambia el procedimiento técnico.",
+      "example": "Llevar a cabo un análisis del resultado."
+    },
+    {
+      "id": "es-purpose",
+      "pattern": "\\bcon el fin de\\b",
+      "message": "Considerar «para» si se conserva la finalidad.",
+      "example": "Leer el archivo con el fin de verificar el resultado."
+    },
+    {
+      "id": "es-promotion",
+      "pattern": "\\b(?:revolucionari[oa]s?|sin precedentes)\\b",
+      "message": "Verificar la evidencia o describir la función concreta.",
+      "example": "Este sistema revolucionario guarda los datos."
+    }
+  ],
+  "examples": {
+    "review": "Cabe destacar que el solucionador registra 20 muestras.",
+    "clear": "El solucionador registra 20 muestras."
+  }
+}

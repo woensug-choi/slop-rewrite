@@ -1,0 +1,43 @@
+{
+  "language": "it",
+  "name": "Italiano",
+  "guidance": [
+    "Mantenere il registro e la forma delle istruzioni: tu, Lei, infinito o forma impersonale.",
+    "Controllare accordi, articoli, preposizioni articolate e riferimenti dei pronomi; non imporre soggetti espliciti.",
+    "Ridurre nominalizzazioni, forme burocratiche e calchi inglesi conservando i termini tecnici necessari.",
+    "Distinguere può, deve, si consiglia e le negazioni. Non trasformare una possibilità in una garanzia.",
+    "Conservare accenti, apostrofi, convenzioni decimali e uso locale delle unità; non tradurre codice o identificatori.",
+    "Controllare che il gerundio abbia un soggetto coerente e non renda ambigua la sequenza delle operazioni.",
+    "Eliminare premesse vuote e promesse non dimostrate. Ripetere un termine tecnico quando serve alla precisione."
+  ],
+  "rules": [
+    {
+      "id": "it-lead-in",
+      "pattern": "\\b(?:è importante sottolineare che|è opportuno notare che)\\b",
+      "message": "Valutare se iniziare direttamente dall’informazione.",
+      "example": "È importante sottolineare che il file viene salvato."
+    },
+    {
+      "id": "it-nominalization",
+      "pattern": "\\beffettuare (?:un[’\\']analisi|una valutazione|una verifica)\\b",
+      "message": "Valutare un verbo diretto, conservando il significato tecnico.",
+      "example": "Effettuare una verifica del risultato."
+    },
+    {
+      "id": "it-purpose",
+      "pattern": "\\bal fine di\\b",
+      "message": "Valutare «per» se lo scopo resta chiaro.",
+      "example": "Leggere il file al fine di verificare il risultato."
+    },
+    {
+      "id": "it-promotion",
+      "pattern": "\\b(?:rivoluzionari[oaie]|senza precedenti)\\b",
+      "message": "Verificare le prove o descrivere la funzione concreta.",
+      "example": "Questo sistema rivoluzionario salva i dati."
+    }
+  ],
+  "examples": {
+    "review": "È importante sottolineare che il solutore registra 20 campioni.",
+    "clear": "Il solutore registra 20 campioni."
+  }
+}

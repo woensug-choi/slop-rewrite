@@ -1,5 +1,7 @@
 # slop-rewrite
 
+이 포크의 8개 언어 문서 검토는 [다국어 사용 안내](multilingual/README.md)를 따릅니다. `--lang`으로 언어를 지정하면 해당 언어의 지침과 검사만 적용합니다. 기존 한국어 명령은 그대로 사용할 수 있습니다.
+
 [![slop-rewrite 공개 사이트의 첫 화면. 한국어 초안의 AI 티를 덜고 내 문체와 취향에 맞게 다시 쓰는 과정과 전후 사례](assets/readme-hero.jpg)](https://slop-rewrite.vercel.app/)
 
 **[공개 사이트에서 윤문 방식과 전후 사례 보기 →](https://slop-rewrite.vercel.app/)**

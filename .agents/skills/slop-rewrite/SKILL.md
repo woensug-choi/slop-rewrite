@@ -5,6 +5,8 @@ description: 한국어 글을 윤문·퇴고하거나 AI 티를 제거하고 검
 
 # slop-rewrite — Codex
 
+다국어 기술 문서는 프로젝트 루트의 `multilingual/README.md`를 먼저 읽는다. `check_multilingual.py --lang <언어> --prompt`로 지침을 읽고, 수정 뒤에는 `--orig`로 원본과 대조한다. 언어별 브랜치의 기본값보다 명시한 언어가 우선한다. 다른 언어에 한국어 가이드를 적용하지 않는다.
+
 먼저 프로젝트 루트의 `AGENTS.md`와 `.claude/skills/slop-rewrite/SKILL.md`를 읽고 해당 모드의 절차를 따른다. 이 파일은 Codex 진입점이며 실행 구현은 기존 스킬을 공유한다.
 
 ## 경로

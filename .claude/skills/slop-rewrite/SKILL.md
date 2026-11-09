@@ -5,6 +5,8 @@ description: 문서 산출물을 원칙(공용 AI 티 목록)·스타일가이�
 
 # slop-rewrite
 
+다국어 문서는 루트의 `multilingual/README.md`를 따른다. 다른 언어에는 아래 한국어 가이드를 적용하지 않는다.
+
 원칙(`principles/`)·스타일가이드(`styleguides/`)·취향(`taste/`) 세 레이어를 읽어 적용만 하는 스킬이다. 원칙은 `principles/ai-tells-ko.md` §5 절차로 손으로 더하고, 스타일가이드는 styleguide-builder 가, 취향은 taste-builder 가 만든다. 모드는 넷이고 사용자의 말이 모드를 정한다. 쓰기와 탐지는 서브에이전트 하나가 하고, 본 컨텍스트는 가이드 선택·검수·notes 만 맡는다. 본 컨텍스트는 원문·가이드·규칙 파일·브리프·전달 파일을 읽지 않는다.
 
 ## 공통

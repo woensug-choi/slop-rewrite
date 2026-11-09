@@ -20,6 +20,7 @@ def main():
         # 환경 검사를 먼저 돌린다. 의존성 누락이나 파서 의존은 긴 인수 테스트를
         # 기다릴 것 없이 바로 드러나야 한다.
         subprocess.run([sys.executable, '-X', 'utf8', '.claude/skills/slop-rewrite/tests/test_environment.py'], cwd=target, env=env, check=True)
+        subprocess.run([sys.executable, '-X', 'utf8', '.claude/skills/slop-rewrite/tests/test_multilingual.py'], cwd=target, env=env, check=True)
         for skill in ('slop-rewrite', 'styleguide-builder', 'taste-builder'):
             subprocess.run([sys.executable, '-X', 'utf8', f'.claude/skills/{skill}/tests/run_acceptance.py'], cwd=target, env=env, check=True)
     print('CI suites passed without private taste')

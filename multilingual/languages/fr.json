@@ -1,0 +1,43 @@
+{
+  "language": "fr",
+  "name": "Français",
+  "guidance": [
+    "Conserver le registre et le choix entre vous, infinitif et formulation impersonnelle dans les procédures.",
+    "Vérifier les accords de genre et de nombre, les participes et le référent des pronoms.",
+    "Réduire les nominalisations et les calques de l’anglais sans remplacer les termes techniques établis.",
+    "Distinguer possibilité, obligation, recommandation et négation. Ne pas transformer « peut » en garantie.",
+    "Conserver la variante régionale, les accents, les apostrophes et la ponctuation française, notamment les espaces insécables existantes.",
+    "Ne pas convertir les virgules décimales, unités, commandes ou identifiants API pendant une simple révision stylistique.",
+    "Supprimer les amorces vides et les promesses sans preuve. Garder les limites et les sources de chaque affirmation."
+  ],
+  "rules": [
+    {
+      "id": "fr-lead-in",
+      "pattern": "\\b(?:il convient de noter que|il est important de souligner que)\\b",
+      "message": "Vérifier si le propos peut commencer directement par le fait.",
+      "example": "Il convient de noter que le fichier est enregistré."
+    },
+    {
+      "id": "fr-nominalization",
+      "pattern": "\\bprocéder à (?:une|la|l[’\\'])\\s*(?:analyse|évaluation|vérification)\\b",
+      "message": "Envisager un verbe direct, sans modifier le sens technique.",
+      "example": "Procéder à une analyse des résultats."
+    },
+    {
+      "id": "fr-purpose",
+      "pattern": "\\bdans le but de\\b",
+      "message": "Envisager « pour » si le but reste explicite.",
+      "example": "Le fichier est lu dans le but de vérifier le résultat."
+    },
+    {
+      "id": "fr-promotion",
+      "pattern": "\\b(?:révolutionnaire|sans précédent)\\b",
+      "message": "Vérifier la preuve ou décrire précisément la fonction.",
+      "example": "Ce système révolutionnaire enregistre les données."
+    }
+  ],
+  "examples": {
+    "review": "Il convient de noter que le solveur enregistre 20 échantillons.",
+    "clear": "Le solveur enregistre 20 échantillons."
+  }
+}
