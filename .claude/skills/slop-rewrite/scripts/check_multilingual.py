@@ -19,6 +19,11 @@ ROOT = Path(__file__).resolve().parents[4]
 PROFILE_DIR = ROOT / "multilingual" / "languages"
 LANGUAGES = ("en", "ko", "ja", "zh", "de", "fr", "es", "it")
 ALIASES = {"zh-cn": "zh", "zh-hans": "zh", "zh-tw": "zh", "zh-hant": "zh"}
+SPACE = r"[ \u00a0\u202f]"
+UNIT = r"(?:%|°[CF]|℃|°|[kMGmunµμ]?(?:Hz|Pa|N|W|V|A|J|m|s|g)|kg|rad|deg|rpm|GiB|MiB|GB|MB|KB|min|h|K)"
+POWER = r"(?:[²³]|\^[-+−]?\d+)?"
+UNITS = rf"{UNIT}{POWER}(?:(?:[/·*]|{SPACE}+){UNIT}{POWER})*"
+NUMBER = rf"(?<![A-Za-z0-9_])[-+−]?\d+(?:[.,:/\-]\d+)*(?:{SPACE}\d{{3}})*(?:[eE][-+−]?\d+)?(?:{SPACE}?{UNITS}(?![A-Za-z]))?"
 
 
 def canonical_language(value: str) -> str:
@@ -154,7 +159,7 @@ def invariants(text: str) -> dict[str, Counter]:
     protected = Counter((kind, text[a:b].rstrip("\n")) for a, b, kind in protected_spans(text))
     # Exact number/unit spelling prevents accidental locale conversions. Any
     # intentional reformatting must be reviewed rather than silently equated.
-    numbers = Counter(re.findall(r"(?<![A-Za-z0-9_])[-+−]?\d+(?:[.,:/\-]\d+)*(?:[ \u00a0\u202f]?\d{3})*(?:[ \u00a0\u202f]?(?:%|°[CF]|℃|°|[kMGmunµ]?s|[kMmunµ]?m(?:²|³)?|[kMGm]?g|Hz|kHz|MHz|GHz|Pa|kPa|MPa|N|kN|W|kW|MW|V|A|J|kJ|GB|MB|KB|GiB|MiB|ms|rpm)(?![A-Za-z]))?", prose(text)))
+    numbers = Counter(re.findall(NUMBER, prose(text)))
     return {"protected": protected, "numbers": numbers}
 
 
